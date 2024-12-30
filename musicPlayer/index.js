@@ -10,7 +10,7 @@ const cover = document.getElementById('cover');
 
 const songs = ['hey', 'summer', 'ukulele'];
 
-let songIndex = 2;
+let songIndex = 1;
 
 
 const loadSong = (song) => {
