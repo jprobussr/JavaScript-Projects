@@ -1,0 +1,24 @@
+body {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.clock-container {
+  background-color: #141313;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  border: 2px solid #0ff;
+}
+
+#clock {
+    color: #0ff; /* Cyan color for text */
+    font-size: 5rem; /* Font size for the clock */
+    text-shadow: 0 0 5px #0ff, /* Outer glow */ 0 0 10px #0ff, 0 0 15px #0ff; /* Toned down glow effect */
+  }
+  
