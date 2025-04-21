@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Playlist Manager</h1>
+
+      <input type="text" id="songInput" placeholder="Enter a song name" />
+
+      <div class="buttons">
+        <button id="addToHead">Add To Start</button>
+        <button id="addToTail">Add To End</button>
+        <button id="removeByData">Remove Song</button>
+        <button id="removeHead">Remove First</button>
+        <button id="removeTail">Remove Last</button>
+      </div>
+
+      <h2>Playlist:</h2>
+      <ul id="playlist"></ul>
+    </div>
+
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
