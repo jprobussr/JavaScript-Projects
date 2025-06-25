@@ -1,27 +1,27 @@
-import LinkedList from './LinkedList.js';
+const addItemBtn = document.getElementById('add-item-btn');
+const itemInput = document.getElementById('item-input');
+const list = document.getElementById('list');
 
-document.addEventListener('DOMContentLoaded', () => {
+let shoppingList = [];
 
-  const list = new LinkedList();
-  const taskInput = document.getElementById('taskInput');
-  const addTaskBtn = document.getElementById('addTaskBtn');
-  const taskList = document.getElementById('taskList');
-
-  addTaskBtn.addEventListener('click', () => {
-    const task = taskInput.value.trim();
-    if (task) {
-      list.addTask(task);
-      taskInput.value = '';
-      renderTasks();
-    }
-  });
-
-  function renderTasks() {
-    taskList.innerHTML = '';
-    list.getTasks().forEach((task) => {
-      const li = document.createElement('li');
-      li.textContent = task;
-      taskList.appendChild(li);
-    });
+addItemBtn.addEventListener('click', (e) => {
+  e.preventDefault()
+  if (shoppingList.includes(itemInput.value.trim())) {
+    alert('No Duplicates');
+  } else if (itemInput.value.trim() !== '') {
+    shoppingList.push(itemInput.value.trim());
+    render()
   }
+
+  itemInput.value = '';
 });
+
+const render = (e) => {
+  let html = '';
+  for (let item of shoppingList) {
+    html += `<li>${item}</li>`;
+  }
+  list.innerHTML = html;
+};
+
+render();

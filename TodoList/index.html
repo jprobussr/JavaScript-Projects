@@ -1,17 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List</title>
-    <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-    
-    <input type="text" id="taskInput" placeholder="Enter Task">
-    <button id="addTaskBtn">Add Task</button>
-    <ul id="taskList"></ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Shopping List 📃</h1>
 
-    <script type="module" src="./app.js"></script>
-</body>
+      <div class="wrapper">
+        <form id="item-form">
+          <label for="item-input">Add Item: </label>
+          <input type="text" id="item-input" placeholder="Enter Item:" />
+          <button type="submit" id="add-item-btn">Add Item</button>
+        </form>
+
+        <ul id="list">
+           
+        </ul>
+      </div>
+
+      <div class="chat-box">
+        <p>💬</p>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
 </html>
