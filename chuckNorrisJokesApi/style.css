@@ -15,6 +15,7 @@
     overflow: hidden;
     padding: 10px 0;
     width: 100%;
+    z-index: 100;
 }
 
 #container p {
@@ -43,10 +44,7 @@
     display: block;
 }
 
-#chuckNorrisImg {
+/* #chuckNorrisImg {
     width: 100%;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-}
+
+} */
