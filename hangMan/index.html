@@ -5,51 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hang Man</title>
     <link rel="stylesheet" href="./styles.css" />
+    <!-- Optional: <script src="./index.js" defer></script> and move the script out of the body -->
   </head>
   <body>
     <h1>Hang Man Game</h1>
     <p>Find the hidden word - Enter a letter</p>
+
     <div class="game-container">
       <svg height="250" width="200" class="figure-container">
+        <!-- Gallows -->
         <line x1="60" y1="20" x2="140" y2="20" />
         <line x1="140" y1="20" x2="140" y2="50" />
         <line x1="60" y1="20" x2="60" y2="230" />
         <line x1="20" y1="230" x2="100" y2="230" />
 
-        <circle cx="140" cy="70" r="20"  class="figure-part"/>
-        <line x1="140" y1="90" x2="140" y2="150"  class="figure-part"/>
-        <line x1="140" y1="120" x2="120" y2="100"  class="figure-part"/>
-        <line x1="140" y1="120" x2="160" y2="100"  class="figure-part"/>
-        <line x1="140" y1="150" x2="120" y2="180"  class="figure-part"/>
-        <line x1="140" y1="150" x2="160" y2="180"  class="figure-part"/>
+        <!-- Figure parts (hidden by default via .figure-part) -->
+        <circle cx="140" cy="70" r="20" class="figure-part" />
+        <line x1="140" y1="90" x2="140" y2="150" class="figure-part" />
+        <line x1="140" y1="120" x2="120" y2="100" class="figure-part" />
+        <line x1="140" y1="120" x2="160" y2="100" class="figure-part" />
+        <line x1="140" y1="150" x2="120" y2="180" class="figure-part" />
+        <line x1="140" y1="150" x2="160" y2="180" class="figure-part" />
       </svg>
 
-      <div class="wrong-letters-container">
-        <div id="wrong-letters">
-            <p></p>
-            <span></span>
-        </div>
+      <!-- Wrong letters: single element with both id and class -->
+      <div id="wrong-letters" class="wrong-letters-container">
+        <!-- JS will fill this -->
       </div>
 
-      <div class="word" id="word">
-        <div class="letter"></div>
-        <div class="letter"></div>
-        <div class="letter"></div>
-        <div class="letter"></div>
-        <div class="letter"></div>
+      <!-- Word: leave empty; JS will render <span class="letter">... -->
+      <div id="word" class="word"></div>
+    </div>
+
+    <!-- Popup overlay (hidden by default; CSS toggles with .show) -->
+    <div id="popup-container" class="popup-container">
+      <div class="popup">
+        <h2 id="final-message"></h2>
+        <button id="play-button">Play Again</button>
       </div>
     </div>
 
-    <div class="popup-container" id="pop-container">
-        <div class="popup">
-            <h2 id="final-message"></h2>
-            <button id="play-button">Play Again</button>
-        </div>
+    <!-- Notification (JS toggles .show) -->
+    <div id="notification-container" class="notification-container">
+      <p>You already guessed that letter</p>
     </div>
 
-    <div class="notification-container" id="notification-container">
-        <p>You have already entered letter</p>
-    </div>
+    <!-- Keep script at end OR add defer in <head> -->
     <script src="./index.js"></script>
   </body>
 </html>

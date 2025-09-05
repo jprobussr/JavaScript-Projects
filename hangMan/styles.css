@@ -1,9 +1,10 @@
+/* ========== GLOBAL RESET ========== */
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: #34495e;
+  background-color: #0e2033;
   color: aliceblue;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
@@ -14,21 +15,25 @@ body {
   overflow: hidden;
 }
 
+/* ========== HEADING ========== */
 h1 {
-  margin: 20 0 0;
+  margin: 20px 0 0; /* Fixed missing px */
   background-color: rgb(7, 6, 18);
   padding: 20px;
 }
 
+/* ========== GAME CONTAINER ========== */
 .game-container {
-  padding: 20px 30px;
+  padding: 120px 130px;
   position: relative;
   margin: auto;
-  height: 350px;
-  width: 450px;
+  height: 450px;
+  width: 550px;
   background-color: rgb(5, 5, 44);
+  border-radius: 10px;
 }
 
+/* ========== HANGMAN FIGURE ========== */
 .figure-container {
   fill: transparent;
   stroke: #fff;
@@ -40,6 +45,7 @@ h1 {
   display: none;
 }
 
+/* ========== WRONG LETTERS BOX ========== */
 .wrong-letters-container {
   position: absolute;
   top: 20px;
@@ -47,8 +53,10 @@ h1 {
   display: flex;
   flex-direction: column;
   text-align: right;
-  background-color: blue;
-  padding: 30px;
+  background-color: #1b3b6f;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
 .wrong-letters-container p {
@@ -57,8 +65,10 @@ h1 {
 
 .wrong-letters-container span {
   font-size: 24px;
+  font-weight: bold;
 }
 
+/* ========== WORD DISPLAY ========== */
 .word {
   display: flex;
   position: absolute;
@@ -75,29 +85,37 @@ h1 {
   justify-content: center;
   margin: 0 3px;
   height: 50px;
-  width: 20px;
+  width: 30px;
+  margin-bottom: 2rem;
 }
 
+/* ========== POPUP OVERLAY ========== */
 .popup-container {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  display: none;
+  inset: 0; /* shorthand for top, right, bottom, left: 0 */
+  display: none; /* Hidden by default */
   align-items: center;
   justify-content: center;
-  /* display: none; */
+  z-index: 100;
+}
+
+/* Show popup when .show is added */
+.popup-container.show {
+  display: flex;
 }
 
 .popup {
   background: #2980b9;
-  border-radius: 5px;
-  box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+  padding: 20px 30px;
   text-align: center;
+  min-width: 250px;
+}
+
+.popup h2 {
+  margin-bottom: 15px;
 }
 
 .popup button {
@@ -107,29 +125,41 @@ h1 {
   margin-top: 20px;
   padding: 12px 20px;
   font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+}
+
+.popup button:hover {
+  background-color: #f0f0f0;
 }
 
 .popup button:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
 
 .popup button:focus {
-    outline: 0;
+  outline: 0;
 }
 
+/* ========== NOTIFICATION BANNER ========== */
 .notification-container {
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 10px 10px 0 0;
-    padding: 15px 20px;
-    position: absolute;
-    bottom: -50px;
-    transition: transform 0.3s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px 10px 0 0;
+  padding: 15px 20px;
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Show notification when .show is added */
+.notification-container.show {
+  transform: translate(-50%, -50px);
 }
 
 .notification-container p {
-    margin: 0;
-}
-
-.notification-container.show {
-    transform: translateY(-50px);
+  margin: 0;
+  font-weight: bold;
 }
