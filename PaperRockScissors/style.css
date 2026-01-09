@@ -17,9 +17,11 @@ body {
   background-color: var(--bg);
   color: var(--text-primary);
   line-height: 1.5;
+  padding: 1rem;
 }
 
 .container {
+  text-align: center;
   margin: 0 auto;
   max-width: 500px;
   width: 100%;
@@ -31,4 +33,11 @@ body {
   background-color: var(--surface);
   padding: 2rem;
   border-radius: 12px;
+}
+
+.container h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  margin-bottom: 1rem;
 }
